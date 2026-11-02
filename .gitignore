@@ -1,0 +1,35 @@
+# Local agent working memory (do not commit)
+.memory/
+
+# Python caches, build output, and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# UV environment artifacts
+# Keep uv.lock and .python-version trackable when a project chooses to commit them.
+
+# Coverage and test reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# OS/editor files
+.DS_Store
+.idea/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+

@@ -1,0 +1,14 @@
+[project]
+name = "uv-data-science-example"
+version = "0.1.0"
+description = "A beginner-friendly uv data science and Jupyter example"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.29",
+    "matplotlib>=3.8",
+    "pandas>=2.2",
+]
+
+[tool.uv]
+package = false
