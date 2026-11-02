@@ -1,117 +1,143 @@
-# 01 — Installing `uv` & Keeping It Updated
+<div align="center">
+
+# ⚡ 01 — Installing `uv` & Keeping It Updated
+### Get `uv` up and running on your system in under 10 seconds
 
 [⬅️ Home](../README.md) · [⬅️ 00 — Prerequisites](../00-prerequisites/README.md) · **01 — Installation** · [Next: Python Management ➡️](python-management.md)
 
 ---
 
-Installing `uv` takes less than 10 seconds. It is a single, self-contained binary written in Rust—it does **not** require an existing Python installation or a C compiler to install.
+</div>
+
+## 💡 Why Installing `uv` is Effortless
+
+Unlike traditional Python setups, `uv` has:
+* **Zero dependencies:** Written in Rust as a single, standalone binary.
+* **No existing Python needed:** You do **not** need Python installed on your machine to install or use `uv`.
+* **No admin privileges required:** It installs safely inside your user directory without needing `sudo` or Administrator rights.
+
+```mermaid
+flowchart LR
+    A["1️⃣ Run 1-Line Command<br/><i>(Downloads in 5 seconds)</i>"] --> B["2️⃣ Restart Terminal<br/><i>(Refreshes PATH)</i>"]
+    B --> C["3️⃣ uv --version<br/><i>(Ready to use!)</i>"]
+```
 
 ---
 
-## 🚀 Recommended Installation Methods
+## 🚀 Choose Your Installation Command
 
-Select the instructions for your operating system:
+Select your operating system and preferred shell:
 
-### 🪟 Windows (PowerShell & Command Prompt)
+<details open>
+<summary><b>🪟 Windows (PowerShell) — Recommended</b></summary>
+<br/>
 
-Choose the shell you prefer on Windows:
-
-#### Option A: Windows PowerShell (Recommended)
-Open **PowerShell** and run:
+Open **PowerShell** and paste this single command:
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-#### Option B: Windows Command Prompt (CMD)
-Open **Command Prompt (CMD)** and run either:
+* `-ExecutionPolicy ByPass`: Ensures the installer script runs smoothly without triggering policy blocks.
+* `irm`: Short for `Invoke-RestMethod` (downloads the installer securely over HTTPS).
+* `iex`: Short for `Invoke-Expression` (runs the installer).
 
-*Via Windows Package Manager (Winget):*
+</details>
+
+<details>
+<summary><b>🪟 Windows (Command Prompt / CMD)</b></summary>
+<br/>
+
+If you prefer **CMD**, you have two simple choices:
+
+**Method 1: Windows Package Manager (Winget)**
 ```cmd
 winget install --id=astral-sh.uv -e
 ```
 
-*Or via the official Astral installer invoked from CMD:*
+**Method 2: Official installer via CMD**
 ```cmd
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
----
+</details>
 
-### 🍎 macOS & 🐧 Linux
+<details>
+<summary><b>🍎 macOS & 🐧 Linux</b></summary>
+<br/>
 
-Open your **Terminal** and run:
+Open your **Terminal** and paste:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-*Alternative for macOS (Homebrew):*
+*Alternative for macOS via Homebrew:*
 ```bash
 brew install uv
 ```
 
-> [!TIP]
-> **A Note on Security & Trust:**
-> The `curl | sh` and `irm | iex` installation pattern is standard for modern developer tools (like Rust, NVM, and uv). It downloads and executes the installer directly from Astral's verified HTTPS domain (`astral.sh`) within your user profile without requiring administrator (`sudo`) access.
-> If you prefer to inspect scripts before executing them, you can open `https://astral.sh/uv/install.ps1` or `https://astral.sh/uv/install.sh` in your browser to view the source code.
+> [!NOTE]
+> **A Note on Security & Transparency:**
+> The `curl | sh` and `irm | iex` patterns are official developer standards used by Rust, Homebrew, and Astral. Everything runs securely over HTTPS directly from Astral's verified domain (`astral.sh`). You can view the open-source installer scripts anytime by visiting `https://astral.sh/uv/install.ps1` or `https://astral.sh/uv/install.sh` in your browser.
+
+</details>
 
 ---
 
 ## 🔄 Step 2: Restart Your Terminal
 
-Once the installation finishes, **close your terminal window and open a new one** (whether using PowerShell, Command Prompt, or Terminal on macOS/Linux).
-This ensures your shell reloads its `PATH` variable and discovers the new `uv` command.
+> [!IMPORTANT]
+> **Don't skip this step!**
+> After the installer completes, **close your terminal window and open a new one**.
+> This forces your shell to refresh its `PATH` and instantly discover the new `uv` command.
 
 ---
 
-## 🔍 Step 3: Verification (10-Second Sanity Check)
+## 🔍 Step 3: Verify the Installation
 
-Run this command in your fresh terminal (PowerShell, CMD, or Bash/Zsh):
+In your **new** terminal window, type:
 
 ```bash
 uv --version
 ```
 
-**Expected output:**
+### Expected Output:
 ```text
-uv 0.5.15
+uv 0.5.15 (or newer)
 ```
 
-*(The exact version number may be newer depending on when you install—any version number printed confirms success!)*
+🎉 **If any version number prints to your screen, `uv` is successfully installed and ready!**
 
-If you see any version number printed, **congratulations! `uv` is successfully installed and ready.**
-
-> [!NOTE]
-> If you get `'uv' is not recognized` (Windows PowerShell or CMD) or `command not found: uv` (macOS/Linux), review **[00-prerequisites](../00-prerequisites/README.md)** to verify your `PATH` setup.
+*(If you see `'uv' is not recognized` or `command not found`, jump back to **[00 — Prerequisites](../00-prerequisites/README.md)** to verify your terminal PATH.)*
 
 ---
 
 ## ⚡ Keeping `uv` Updated
 
-`uv` releases performance improvements and new features frequently. To update `uv` to the latest version at any time, run:
+Astral releases speed improvements and updates frequently. Updating `uv` takes one command:
 
 ```bash
 uv self update
 ```
 
-*(If you installed via `brew` or `winget`, you can also use `brew upgrade uv` or `winget upgrade astral-sh.uv`.)*
+*(If you installed via `brew` or `winget`, you can also run `brew upgrade uv` or `winget upgrade astral-sh.uv`.)*
 
 ---
 
-## 📋 Quick Comparison: Installation Methods
+## 📋 Quick Reference: Installation Commands
 
-| Platform / Shell | Primary Method (Recommended) | Alternative |
+| Operating System | Recommended Command | Alternative |
 |---|---|---|
 | **Windows (PowerShell)** | `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 \| iex"` | `winget install --id=astral-sh.uv -e` |
 | **Windows (CMD)** | `winget install --id=astral-sh.uv -e` | `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 \| iex"` |
 | **macOS** | `curl -LsSf https://astral.sh/uv/install.sh \| sh` | `brew install uv` |
-| **Linux / WSL** | `curl -LsSf https://astral.sh/uv/install.sh \| sh` | System package manager / Cargo |
+| **Linux / WSL** | `curl -LsSf https://astral.sh/uv/install.sh \| sh` | `cargo install --git https://github.com/astral-sh/uv uv` |
 
 ---
 
 ## ⏭️ Next Step
 
-Now that `uv` is installed, you don't even need to download Python manually from python.org! Learn how `uv` automatically manages Python versions in:
+Now that `uv` is ready, you **never** need to manually download Python from `python.org` again! Learn how `uv` automatically downloads and switches Python versions for you in:
 
-👉 **[Managing Python Versions with `uv`](python-management.md)**
+👉 **[Part 2: Managing Python Versions with `uv` ➡️](python-management.md)**

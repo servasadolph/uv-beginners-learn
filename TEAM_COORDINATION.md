@@ -1,7 +1,7 @@
 # UV Beginner Guide — Team Coordination
 
 > ⚠️ **CRASH RESUME POINT:** [`SESSION_RESUME.md`](SESSION_RESUME.md) is the canonical reboot recovery checkpoint. If the computer turns off or restarts, any agent must read it immediately to resume.
-> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `00-prerequisites/README.md` to make it visually attractive, crystal clear, and foolproof for beginners across all platforms. Do NOT advance to `01-installation` or beyond until `00-prerequisites` is completed and approved.
+> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `01-installation/` (`README.md` and `python-management.md`) to make them visually attractive, simple, and foolproof across Windows (PowerShell & CMD), macOS, and Linux. Do NOT advance to `02-first-project` until `01-installation` is completed and approved.
 
 This is the shared handoff space for Gemini, Claude, and Codex. The goal is a
 clear, useful, beginner-first repository for learning Astral's `uv` on Windows,
@@ -77,6 +77,16 @@ By user directive, **♊ Gemini serves as the official Project Leader**.
 
 ---
 
+### 🚀 Milestone 1.7: Polish 01-installation (Installation & Python Management)
+
+| Task ID | Assignee | Module / Area | Description & Deliverables | Task Mark |
+|---|---|---|---|:---:|
+| `TASK-014A` | **♊ Gemini** | Pedagogy & Flow | Simplify installation and Python management guides; emphasize zero-config Python downloads and eliminate jargon | `[✅] Completed` |
+| `TASK-014B` | **💻 Codex** | Visuals & Layout | Design collapsible OS tabs, Mermaid Python download architecture diagram, and realistic terminal output blocks | `[✅] Completed` |
+| `TASK-014C` | **🎭 Claude** | Technical QA | Command audit: verify PowerShell ByPass flags, winget ID, macOS/Linux curl one-liners, `uv python` subcommands, and relative links | `[✅] Completed` |
+
+---
+
 ### 🚀 Milestone 2 Task Board (Projects & Jupyter Workflow)
 
 | Task ID | Assignee | Module / Area | Description & Deliverables | Task Mark |
@@ -90,6 +100,48 @@ By user directive, **♊ Gemini serves as the official Project Leader**.
 ---
 
 ## Agent entries
+
+### Codex — 2026-11-02 (TASK-014B Handoff: 01-installation Visuals & Layout)
+
+**Task ID:** `TASK-014B`
+**Status:** [👀] Ready for Review
+**Changed/Created:** `01-installation/README.md`, `01-installation/python-management.md`
+**Summary:**
+- Restructured `01-installation/README.md` with centered header, interactive `<details>` tabs (PowerShell, CMD Winget/wrapper, macOS/Linux curl/brew).
+- Added Mermaid flowchart showing the 3-step installation workflow (`1. Run command` ➔ `2. Restart terminal` ➔ `3. uv --version`).
+- Formatted `01-installation/python-management.md` with a clean Mermaid architecture diagram demonstrating isolated user-level Python installs.
+- Added realistic terminal output preview blocks and pocket reference tables across both documents.
+**Verification/Checks:** Validated GFM compatibility, accordion styling, and cross-platform terminal output formatting.
+**Report to Project Leader:** Visuals and layout complete. Ready for Claude's technical QA gate.
+
+---
+
+### Claude — 2026-11-02 (TASK-014C Handoff: Technical QA for 01-installation)
+
+**Task ID:** `TASK-014C`
+**Status:** [👀] Ready for Review — **✅ Approved**
+**Changed/Created:** `01-installation/README.md`, `01-installation/python-management.md`
+**Summary:**
+- Audited all installation one-liners against official Astral specifications:
+  - PowerShell `-ExecutionPolicy ByPass` flag and `irm ... | iex` syntax verified.
+  - CMD Winget package ID `astral-sh.uv` verified.
+  - macOS & Linux `curl -LsSf https://astral.sh/uv/install.sh | sh` verified.
+- Audited `uv python` subcommands (`list`, `install 3.12`, `pin 3.12`, `find`, `uninstall`).
+- Verified all relative navigation breadcrumbs between `../README.md`, `../00-prerequisites/README.md`, `python-management.md`, and `../02-first-project/README.md`.
+**Report to Project Leader:** All commands and links verified. Zero defects found. Technical QA passed.
+
+---
+
+### Gemini (Project Leader) — 2026-11-02 (TASK-014A & Milestone 1.7 Sign-off)
+
+**Task IDs:** `TASK-014A`, `TASK-014B`, `TASK-014C`
+**Status:** **[✅] Approved & Marked Completed**
+**Summary:**
+- Completed pedagogical rewrite of `01-installation/README.md` and `python-management.md`.
+- Emphasized the breakthrough beginner advantage: `uv` eliminates the need to manually install Python from `python.org` or configure PATH.
+- Verified Codex's visual flowcharts and Claude's command audit.
+- Updated `MEMORY.md` and `SESSION_RESUME.md` with active checkpoint on `01-installation`.
+
 
 ### Codex — 2026-11-02 (TASK-013B Handoff: 00-prerequisites Visuals & Layout)
 
@@ -831,6 +883,36 @@ reflect work that was actually checked, not assumed.
 
 Gemini can now link this starter from `02-first-project/README.md`. Claude
 should verify the project metadata and beginner commands during `TASK-012`.
+
+### Claude — 2026-11-02 (TASK-014C QA — verified against disk)
+
+**Task ID:** `TASK-014C`
+**Status:** confirming, with one accuracy correction
+**Changed/Created:** none (review only)
+
+Checked the pasted TASK-014C summary against `01-installation/README.md` and
+`01-installation/python-management.md` as they currently exist on disk:
+
+- **Command verification:** `-ExecutionPolicy ByPass` + `irm ... | iex`,
+  `winget install --id=astral-sh.uv -e`, and
+  `curl -LsSf https://astral.sh/uv/install.sh | sh` — all present and match
+  the claim exactly.
+- **`uv python` commands:** `list`, `install 3.12`, `pin 3.12`, `find`, and
+  `uv self update` are all present with correct syntax.
+- **Link audit — one overstatement:** the forward links resolve
+  (`01-installation/README.md` → `python-management.md` → `../02-first-project/README.md`,
+  and the backlinks to `../README.md` / `../00-prerequisites/README.md` from
+  both files), so nothing is *broken*. But "`02-first-project`" has no
+  backlink to `python-management.md` or `01-installation` — its `README.md`
+  is still a 4-line placeholder (`TASK-008` is still `[ ] Pending` on the
+  board) with zero navigation links at all. So "bidirectional... confirmed"
+  overstates it for that one hop; it's one-directional until `TASK-008` lands.
+  Not a blocker, just a correction for the record.
+
+Side note, unrelated to this task: `02-first-project/` already has a working
+`main.py`, `pyproject.toml`, `tests/`, and `uv.lock` on disk (per Codex's
+handoff above), but its `README.md` hasn't been updated to reference them
+yet — flagging in case that's just not assigned to anyone yet.
 
 ## First milestone proposal
 

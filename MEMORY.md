@@ -2,7 +2,7 @@
 _Initialized: 2026-11-02 | Branch: main | Remote: https://github.com/servasadolph/uv-beginners-learn.git_
 
 > ⚠️ **CRASH RESUME POINT:** See [`SESSION_RESUME.md`](SESSION_RESUME.md) for instant state restoration if computer powers off or reboots.
-> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `00-prerequisites/README.md`. DO NOT move to `01-installation` or beyond until `00-prerequisites` is finished and approved by user.
+> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `01-installation/` (`README.md` and `python-management.md`). DO NOT move to `02-first-project` until `01-installation` is approved by user.
 
 ## State
 Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginners-learn`.
@@ -20,10 +20,15 @@ Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginn
 ## Milestone 1.5 Status: [✅] Complete & Pushed (`d30532e`)
 - `TASK-006A`, `TASK-006B`, `TASK-006C` [✅ Completed]: Root `README.md` revamp, Mermaid flowchart, collapsible quickstart, MIT `LICENSE`, and `FAQ.md`.
 
-## Active Sprint: Milestone 1.6 — Polish 00-prerequisites (Terminal Setup, PATH & ExecutionPolicy)
-- `TASK-013A` [✅ Completed]: ♊ Gemini — Pedagogy, plain-English terminal mental models (PATH analogy), zero-jargon execution policy guide.
-- `TASK-013B` [✅ Completed]: 💻 Codex — Visual hierarchy, interactive `<details>` tabs, Mermaid PATH flowchart, terminal preview blocks.
-- `TASK-013C` [✅ Completed]: 🎭 Claude — Architecture QA audit across Windows 10/11 (PowerShell & CMD), macOS, Linux, and relative links.
+## Milestone 1.6 Status: [✅] Complete & Pushed (`19b1813`)
+- `TASK-013A`, `TASK-013B`, `TASK-013C` [✅ Completed]: `00-prerequisites/README.md` polish, PATH mental model, keyboard tags, and terminal setup.
+
+## Active Sprint: Milestone 1.7 — Polish 01-installation (Installation & Python Management)
+- `TASK-014A` [✅ Completed]: ♊ Gemini — Simplify installation and Python management guides; emphasize zero-config Python downloads.
+- `TASK-014B` [✅ Completed]: 💻 Codex — Collapsible OS tabs, Mermaid diagram, and realistic terminal output blocks.
+- `TASK-014C` [✅ Completed]: 🎭 Claude — Multi-platform command audit (PowerShell ByPass, winget, curl, `uv python` subcommands).
+
+
 
 
 
