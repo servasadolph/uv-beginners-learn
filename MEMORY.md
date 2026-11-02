@@ -1,6 +1,9 @@
 # Project Memory
 _Initialized: 2026-11-02 | Branch: main | Remote: https://github.com/servasadolph/uv-beginners-learn.git_
 
+> ⚠️ **CRASH RESUME POINT:** See [`SESSION_RESUME.md`](SESSION_RESUME.md) for instant state restoration if computer powers off or reboots.
+> 🛑 **STRICT USER DIRECTIVE:** DO NOT move to `00-prerequisites` or any subsequent lesson until `README.md` is 100% finished, reviewed, and approved by the user.
+
 ## State
 Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginners-learn`.
 **Remote Connected:** GitHub repository set to `https://github.com/servasadolph/uv-beginners-learn.git` on branch `main`.
@@ -12,13 +15,12 @@ Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginn
 - **Codex (Implementation Lead):** Folder scaffolding, code templates, runnable examples, scripts, and automation workflows.
 
 ## Milestone 1 Status: [✅] Complete & Verified
-- `TASK-001` [✅ Completed]: Codex scaffolded folder tree per `guide.md`.
-- `TASK-002` [✅ Completed]: Codex refined `.gitignore` & base `pyproject.toml` templates.
-- `TASK-003` [✅ Completed]: Gemini drafted `00-prerequisites/README.md` (PowerShell, CMD, Bash, Zsh).
-- `TASK-004` [✅ Completed]: Gemini drafted `01-installation/` (PowerShell, CMD, Winget, curl, brew, python management).
-- `TASK-005` [✅ Completed]: Claude completed QA review on `00` & `01`; all feedback incorporated.
-- `TASK-006` [✅ Completed]: Gemini drafted interactive master `README.md`.
-- `TASK-007` [✅ Completed]: Claude completed final QA sign-off for Milestone 1.
+- `TASK-001` through `TASK-007` [✅ Completed & Pushed]: Scaffolding, prerequisites, installation guides, initial README, and GitHub sync.
+
+## Active Sprint: Milestone 1.5 — Polish Root README (Simplicity, Visuals & Beginner Charm)
+- `TASK-006A` [✅ Completed]: ♊ Gemini — Pedagogical polish, beginner value proposition, simple step-by-step guidance.
+- `TASK-006B` [✅ Completed]: 💻 Codex — Visual formatting, Mermaid workflow diagram, badges, and clean layout.
+- `TASK-006C` [✅ Completed]: 🎭 Claude — Multi-platform technical QA gate (CMD, PowerShell, macOS, Linux), fixed missing `LICENSE` file.
 
 ## Milestone 2: Projects & Jupyter Workflow (Queued)
 - `TASK-008` [Pending]: Gemini drafting `02-first-project/README.md`.

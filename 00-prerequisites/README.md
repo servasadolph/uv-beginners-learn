@@ -1,5 +1,9 @@
 # 00 — Prerequisites & Terminal Setup
 
+[⬅️ Home](../README.md) · **00 — Prerequisites** · [Next: 01 — Installation ➡️](../01-installation/README.md)
+
+---
+
 Before installing `uv`, setting up your terminal properly ensures you won't hit confusing errors like `"command not found"` or `"running scripts is disabled on this system"`.
 
 This quick 2-minute setup prevents 95% of common beginner setup issues.

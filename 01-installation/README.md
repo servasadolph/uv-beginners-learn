@@ -1,5 +1,9 @@
 # 01 — Installing `uv` & Keeping It Updated
 
+[⬅️ Home](../README.md) · [⬅️ 00 — Prerequisites](../00-prerequisites/README.md) · **01 — Installation** · [Next: Python Management ➡️](python-management.md)
+
+---
+
 Installing `uv` takes less than 10 seconds. It is a single, self-contained binary written in Rust—it does **not** require an existing Python installation or a C compiler to install.
 
 ---

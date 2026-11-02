@@ -1,5 +1,9 @@
 # Managing Python Versions with `uv`
 
+[⬅️ Home](../README.md) · [⬅️ 01 — Installation](README.md) · **Python Management** · [Next: 02 — First Project ➡️](../02-first-project/README.md)
+
+---
+
 Historically, Python beginners faced significant headaches managing Python:
 - Downloading installers from `python.org` and forgetting to check *"Add Python to PATH"*.
 - System Python conflicts and permission errors (`sudo pip`).

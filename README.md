@@ -1,108 +1,149 @@
-# 🚀 `uv` for Beginners: Modern Python Made Simple & Lightning Fast
+<div align="center">
 
-> An open-source, step-by-step practical guide to mastering **Astral's `uv`** on **Windows (PowerShell & CMD)**, **macOS**, and **Linux**.
+# ⚡ uv for Beginners
+### The Fast, Modern Python Package Manager
 
----
+**Zero headaches. Blazingly fast. Made for beginners, students, and pros.**
 
-## 🤔 What is `uv` & Why Should Beginners Care?
-
-If you've ever tried learning Python, you've probably felt overwhelmed by packaging tools:
-* *"Do I need `pip` or `pip3`?"*
-* *"How do virtual environments work (`python -m venv`)?"*
-* *"Why doesn't my terminal find Python?"*
-* *"Do I need `pyenv`, `conda`, `poetry`, or `pipx`?"*
-
-**`uv` replaces all of them with a single, blazingly fast tool written in Rust.**
-
-### The 10-Second Comparison
-
-| What you want to do | The Old Way 🐢 | The Modern `uv` Way ⚡ |
-|---|---|---|
-| **Install Python** | Visit `python.org`, run installer, pray PATH works | `uv python install 3.12` |
-| **Create a project** | Create folder, run `python -m venv .venv`, activate | `uv init my-project` |
-| **Install a library** | Activate venv, run `pip install pandas`, update `requirements.txt` | `uv add pandas` *(automatically manages venv & lockfile)* |
-| **Run your code** | Remember to activate venv, run `python main.py` | `uv run main.py` *(automatically runs in project venv)* |
-| **Run Jupyter / Notebooks** | Install `ipykernel`, register kernel name, link VS Code | `uv add --dev ipykernel` ➔ select `.venv` in VS Code |
-| **Run a single script with deps** | Create temporary venv, install deps, run script | `uv run script.py` *(reads inline dependencies automatically)* |
-| **Run a CLI tool (e.g. Ruff/Black)** | Install globally with `pipx install ruff` | `uvx ruff check .` *(zero installation needed)* |
+[![Python](https://img.shields.io/badge/Python-3.12%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![uv](https://img.shields.io/badge/uv-Astral-purple?logo=astral&logoColor=white)](https://docs.astral.sh/uv/)
+[![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)](#-quickstart)
+[![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
 ---
 
-## 🗺️ Learning Roadmap
+</div>
 
-Follow the sections in order, or jump directly to what you need today:
+## 💡 Why `uv`?
 
-| Module | What You Will Learn | Platform Support |
-|---|---|:---:|
-| **[00 — Prerequisites](00-prerequisites/README.md)** | Fix PowerShell ExecutionPolicy, CMD setup, PATH basics, and terminal restarts | 🪟 Windows · 🍎 macOS · 🐧 Linux |
-| **[01 — Installation & Python Setup](01-installation/README.md)** | Install `uv` in 10s and manage Python versions with `uv python` | 🪟 Windows · 🍎 macOS · 🐧 Linux |
-| **[02 — Your First Project](02-first-project/README.md)** | `uv init`, `pyproject.toml`, `uv.lock`, and running code with `uv run` | All platforms |
-| **[03 — Jupyter & VS Code Setup](03-jupyter-setup/README.md)** | Bulletproof kernel setup in VS Code & JupyterLab | All platforms |
-| **[04 — Dependency Management](04-dependency-mgmt/README.md)** | Adding (`uv add`), dev tools (`--dev`), removing, and lockfiles (`uv sync`) | All platforms |
-| **[05 — Single-File Scripts](05-single-file-scripts/README.md)** | PEP 723 inline script metadata — run scripts with dependencies without a project | All platforms |
-| **[06 — Tools & `uvx`](06-tools-and-uvx/README.md)** | Run linters, formatters, and CLIs instantly with `uvx` | All platforms |
-| **[07 — Migration Guide](07-migration/README.md)** | Migrate existing `requirements.txt`, `pip`, or Conda environments in 60s | All platforms |
+Python projects often make beginners juggle several tools. `uv` brings the
+most common jobs into one fast, consistent workflow.
+
+### The old way: five tools, five mental models
+
+```mermaid
+flowchart LR
+    A["🐍 Python"] --> B["pip<br/><i>packages</i>"]
+    A --> C["venv<br/><i>environments</i>"]
+    A --> D["pyenv<br/><i>versions</i>"]
+    A --> E["pipx<br/><i>CLI tools</i>"]
+    A --> F["poetry<br/><i>projects</i>"]
+```
+
+### The uv way: one workflow
+
+```mermaid
+flowchart LR
+    A["📥 Install uv"] --> B["📁 uv init"]
+    B --> C["📦 uv add requests"]
+    C --> D["🚀 uv run main.py"]
+```
+
+You can install Python versions, manage dependencies, create environments, and
+run tools without memorizing a different workflow for each task.
 
 ---
 
-## ⚡ 1-Minute Cross-Platform Cheat Sheet
+## ⚡ Quickstart
 
-Copy-paste commands tailored for your shell:
-
-### 1. Installation
+### Step 1: Install `uv`
 
 <details open>
-<summary><b>Click to expand installation commands</b></summary>
+<summary><b>Select your operating system</b></summary>
+<br/>
 
-* **Windows (PowerShell):**
+* **🪟 Windows (PowerShell):**
   ```powershell
   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
   ```
-* **Windows (Command Prompt / CMD):**
+* **🪟 Windows (Command Prompt / CMD):**
   ```cmd
   winget install --id=astral-sh.uv -e
   ```
-* **macOS & Linux (Terminal / Bash / Zsh):**
+* **🍎 macOS & 🐧 Linux:**
   ```bash
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
-*(Always close and reopen your terminal after installing!)*
+> ⚠️ **Important:** Close and reopen your terminal after installation! Then verify:
+> ```bash
+> uv --version
+> ```
+
+> **Expected result:** your terminal prints a version such as `uv 0.x.x`.
+> Any version number means the installation worked.
 </details>
 
-### 2. Daily Commands
+### Step 2: Create & Run Your First App (30 seconds)
 
-| Task | Command |
+```bash
+# 1. Create a new project folder
+uv init my-app
+cd my-app
+
+# 2. Add any library you want (e.g. cowsay or requests)
+uv add cowsay
+
+# 3. Run it! (uv creates the environment automatically)
+uv run hello.py
+```
+
+*🎉 That's it! No `python -m venv`, no activating scripts, no broken PATH errors.*
+
+---
+
+## 🗺️ Step-by-Step Curriculum
+
+Start at **Lesson 00** if you are new to the terminal, or jump to any topic below:
+
+| Lesson | Focus | What You'll Learn |
+|:---:|---|---|
+| **[00](00-prerequisites/README.md)** | **[Prerequisites & Terminal](00-prerequisites/README.md)** | PowerShell execution policies, CMD tips, and understanding `PATH`. |
+| **[01](01-installation/README.md)** | **[Installation & Python Setup](01-installation/README.md)** | Install `uv`, update it, and download Python with `uv python`. |
+| **[02](02-first-project/README.md)** | **[Your First Project](02-first-project/README.md)** | Deep dive into `uv init`, `pyproject.toml`, `uv.lock`, and `uv run`. |
+| **[03](03-jupyter-setup/README.md)** | **[Jupyter & VS Code](03-jupyter-setup/README.md)** | Seamless data science notebooks and kernel selection in VS Code. |
+| **[04](04-dependency-mgmt/README.md)** | **[Managing Dependencies](04-dependency-mgmt/README.md)** | Adding (`uv add`), dev tools (`--dev`), removing, and lockfiles (`uv sync`). |
+| **[05](05-single-file-scripts/README.md)** | **[Single-File Scripts](05-single-file-scripts/README.md)** | Run standalone `.py` scripts with inline dependencies (PEP 723). |
+| **[06](06-tools-and-uvx/README.md)** | **[CLI Tools & `uvx`](06-tools-and-uvx/README.md)** | Run linters and tools like `ruff` or `black` without installing them. |
+| **[07](07-migration/README.md)** | **[Migration Guide](07-migration/README.md)** | Move from `requirements.txt`, `pip`, or Conda in under 60 seconds. |
+
+---
+
+## 🎯 Choose Your Track
+
+<table>
+<tr>
+<td width="50%"><strong>🎓 Complete beginner</strong><br/><a href="00-prerequisites/README.md">Start with the prerequisites</a><br/><small>Configure your terminal and PATH.</small></td>
+<td width="50%"><strong>📊 Data science</strong><br/><a href="03-jupyter-setup/README.md">Set up Jupyter + VS Code</a><br/><small>Or open the ready-to-run example.</small></td>
+</tr>
+<tr>
+<td><strong>⚡ Quick script</strong><br/><a href="05-single-file-scripts/README.md">Run a single-file script</a><br/><small>Use inline dependencies without a project.</small></td>
+<td><strong>🔄 Existing project</strong><br/><a href="07-migration/README.md">Follow the migration guide</a><br/><small>Move from pip, requirements.txt, or Conda.</small></td>
+</tr>
+</table>
+
+---
+
+## 📌 Pocket Cheat Sheet
+
+The commands you will use 95% of the time:
+
+| Action | Command |
 |---|---|
-| **Check `uv` version** | `uv --version` |
-| **Update `uv` to latest** | `uv self update` |
-| **Install Python 3.12** | `uv python install 3.12` |
-| **Create new project** | `uv init my-app` |
-| **Add a library (e.g., requests)** | `uv add requests` |
-| **Add a dev tool (e.g., pytest)** | `uv add --dev pytest` |
-| **Run your project** | `uv run hello.py` |
-| **Run a one-off tool** | `uvx ruff check .` |
+| **Install a Python version** | `uv python install 3.12` |
+| **Create a new project** | `uv init <project-name>` |
+| **Add a package** | `uv add <package>` |
+| **Add a dev/test tool** | `uv add --dev pytest` |
+| **Remove a package** | `uv remove <package>` |
+| **Run your script / project** | `uv run <script.py>` |
+| **Sync dependencies to match lockfile** | `uv sync` |
+| **Run a CLI tool without installing** | `uvx <tool>` *(e.g. `uvx ruff check .`)* |
+| **Upgrade uv to latest version** | `uv self update` |
 
 ---
 
-## 🎯 Choose Your Path
+## 🆘 Need Help?
 
-* 🎓 **Complete Beginner?** Start at **[00 — Prerequisites](00-prerequisites/README.md)**.
-* 📊 **Data Science Student?** Check out **[03 — Jupyter Setup](03-jupyter-setup/README.md)** and the pre-configured **[examples/data-science-jupyter](examples/data-science-jupyter/)**.
-* ⚡ **Writing Quick Automation Scripts?** See **[05 — Single-File Scripts](05-single-file-scripts/README.md)**.
-* 📦 **Upgrading an Existing Project?** Jump straight to **[07 — Migration Guide](07-migration/README.md)**.
-
----
-
-## ❓ Common Questions & Troubleshooting
-
-Hit a snag? Check our **[FAQ & Troubleshooting Guide](FAQ.md)** for quick fixes to common beginner roadblocks (like VS Code interpreter selection, proxy issues, and path errors).
-
----
-
-## 🤝 Project & Community
-
-This guide is open-source and maintained on GitHub:
-👉 **[github.com/servasadolph/uv-beginners-learn](https://github.com/servasadolph/uv-beginners-learn)**
-
-Feedback, suggestions, and pull requests are warmly welcomed!
+* 🔍 Check our **[FAQ & Common Mistakes Guide](FAQ.md)** for quick answers to common questions (e.g., *"Why can't VS Code find my packages?"*).
+* 📖 Official Documentation: [docs.astral.sh/uv](https://docs.astral.sh/uv/)
+* 💬 Community & Feedback: [github.com/servasadolph/uv-beginners-learn](https://github.com/servasadolph/uv-beginners-learn)
