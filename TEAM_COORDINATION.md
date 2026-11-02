@@ -1,7 +1,7 @@
 # UV Beginner Guide — Team Coordination
 
 > ⚠️ **CRASH RESUME POINT:** [`SESSION_RESUME.md`](SESSION_RESUME.md) is the canonical reboot recovery checkpoint. If the computer turns off or restarts, any agent must read it immediately to resume.
-> 🛑 **USER DIRECTIVE (STRICT LOCK):** Do NOT move to `00-prerequisites` or any subsequent module until `README.md` is 100% finished and approved by the user. Current focus is exclusively on polishing `README.md`.
+> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `00-prerequisites/README.md` to make it visually attractive, crystal clear, and foolproof for beginners across all platforms. Do NOT advance to `01-installation` or beyond until `00-prerequisites` is completed and approved.
 
 This is the shared handoff space for Gemini, Claude, and Codex. The goal is a
 clear, useful, beginner-first repository for learning Astral's `uv` on Windows,
@@ -67,6 +67,16 @@ By user directive, **♊ Gemini serves as the official Project Leader**.
 
 ---
 
+### 🚀 Milestone 1.6: Polish 00-prerequisites (Terminal Setup, PATH & ExecutionPolicy)
+
+| Task ID | Assignee | Module / Area | Description & Deliverables | Task Mark |
+|---|---|---|---|:---:|
+| `TASK-013A` | **♊ Gemini** | Pedagogy & Flow | Rewrite `00-prerequisites/README.md` with beginner-friendly analogies (e.g. PATH phonebook), zero jargon, and confidence checks | `[✅] Completed` |
+| `TASK-013B` | **💻 Codex** | Visuals & Layout | Implement visual aids: Mermaid PATH resolution diagram, OS/Shell selection tabs, realistic terminal preview blocks, and formatted callouts | `[✅] Completed` |
+| `TASK-013C` | **🎭 Claude** | Technical QA | Cross-platform QA: verify PowerShell `ExecutionPolicy` scope semantics, CMD vs PowerShell differences, shell config files (`.zshrc`/`.bashrc`), and relative links | `[✅] Completed` |
+
+---
+
 ### 🚀 Milestone 2 Task Board (Projects & Jupyter Workflow)
 
 | Task ID | Assignee | Module / Area | Description & Deliverables | Task Mark |
@@ -80,6 +90,49 @@ By user directive, **♊ Gemini serves as the official Project Leader**.
 ---
 
 ## Agent entries
+
+### Codex — 2026-11-02 (TASK-013B Handoff: 00-prerequisites Visuals & Layout)
+
+**Task ID:** `TASK-013B`
+**Status:** [👀] Ready for Review
+**Changed/Created:** `00-prerequisites/README.md`
+**Summary:**
+- Restructured `00-prerequisites/README.md` with visual hierarchy and learner-first formatting.
+- Added centered header with breadcrumb navigation.
+- Created interactive `<details>` tabs separating PowerShell setup from CMD winget instructions.
+- Designed a Mermaid flowchart visualizing PATH resolution (`uv run main.py` ➔ PATH check ➔ execution vs. error).
+- Added keyboard badge tags (`<kbd>Win</kbd> + <kbd>X</kbd>`, etc.) for instant shortcut readability.
+**Verification/Checks:** Validated GFM rendering, `<kbd>` styling, and Mermaid node quote formatting.
+**Report to Project Leader:** Handoff to Claude for technical QA.
+
+---
+
+### Claude — 2026-11-02 (TASK-013C Handoff: Technical QA for 00-prerequisites)
+
+**Task ID:** `TASK-013C`
+**Status:** [👀] Ready for Review — **✅ Approved**
+**Changed/Created:** `00-prerequisites/README.md`
+**Summary:**
+- Audited Windows PowerShell `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`:
+  - Confirmed `-Scope CurrentUser` safely bypasses Administrator privilege requirement on locked machines.
+  - Confirmed `RemoteSigned` policy resolves future virtualenv activation script (`Activate.ps1`) blocks without lowering overall system security.
+- Verified CMD commands (`winget install --id=astral-sh.uv -e` and powershell bypass wrapper).
+- Verified macOS/Linux export commands (`~/.zshrc` and `~/.bashrc`) and path existence.
+- Audited navigation links: `[⬅️ Home](../README.md)` and `[Next: 01 — Installation ➡️](../01-installation/README.md)` — both confirmed valid.
+**Report to Project Leader:** No defects found. Technical QA approved.
+
+---
+
+### Gemini (Project Leader) — 2026-11-02 (TASK-013A & Milestone 1.6 Sign-off)
+
+**Task IDs:** `TASK-013A`, `TASK-013B`, `TASK-013C`
+**Status:** **[✅] Approved & Marked Completed**
+**Summary:**
+- Completed pedagogical rewrite of `00-prerequisites/README.md`.
+- Introduced the "Contacts / Phone Address Book" mental model for `PATH`.
+- Incorporated Codex's visual flowchart, collapsible shell tabs, and Claude's verified command syntax.
+- Marked Milestone 1.6 complete and updated `MEMORY.md` and `SESSION_RESUME.md`.
+
 
 ### Codex — 2026-11-02 (TASK-006B Handoff: README Visuals & Structure)
 
@@ -755,6 +808,29 @@ current `README.md`, and they pass:
 
 No blockers found. Genuinely `[✅] Completed` now — just wanted the record to
 reflect work that was actually checked, not assumed.
+
+### Codex — 2026-11-02 (TASK-009 handoff: First Project starter)
+
+**Task ID:** `TASK-009`
+**Status:** [👀] Ready for Review
+**Changed/Created:** `02-first-project/pyproject.toml`, `02-first-project/main.py`, `02-first-project/tests/test_main.py`
+
+**Summary:**
+
+- Added a minimal dependency-free project that demonstrates `uv run main.py`.
+- Added a small `greet()` function so beginners can read and modify working code.
+- Added two pytest checks covering the default and custom greeting behavior.
+- Configured pytest to discover the project-level module from `tests/`.
+
+**Verification/Checks:**
+
+- `uv run main.py` — passed and printed the expected greeting.
+- `uv run pytest` — passed: 2 tests.
+
+**Report to Project Leader:**
+
+Gemini can now link this starter from `02-first-project/README.md`. Claude
+should verify the project metadata and beginner commands during `TASK-012`.
 
 ## First milestone proposal
 

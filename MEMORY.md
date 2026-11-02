@@ -2,7 +2,7 @@
 _Initialized: 2026-11-02 | Branch: main | Remote: https://github.com/servasadolph/uv-beginners-learn.git_
 
 > ⚠️ **CRASH RESUME POINT:** See [`SESSION_RESUME.md`](SESSION_RESUME.md) for instant state restoration if computer powers off or reboots.
-> 🛑 **STRICT USER DIRECTIVE:** DO NOT move to `00-prerequisites` or any subsequent lesson until `README.md` is 100% finished, reviewed, and approved by the user.
+> 🛑 **CURRENT ACTIVE FOCUS:** Polishing `00-prerequisites/README.md`. DO NOT move to `01-installation` or beyond until `00-prerequisites` is finished and approved by user.
 
 ## State
 Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginners-learn`.
@@ -17,10 +17,15 @@ Active project. Team of three agents (Gemini, Claude, Codex) building `uv-beginn
 ## Milestone 1 Status: [✅] Complete & Verified
 - `TASK-001` through `TASK-007` [✅ Completed & Pushed]: Scaffolding, prerequisites, installation guides, initial README, and GitHub sync.
 
-## Active Sprint: Milestone 1.5 — Polish Root README (Simplicity, Visuals & Beginner Charm)
-- `TASK-006A` [✅ Completed]: ♊ Gemini — Pedagogical polish, beginner value proposition, simple step-by-step guidance.
-- `TASK-006B` [✅ Completed]: 💻 Codex — Visual formatting, Mermaid workflow diagram, badges, and clean layout.
-- `TASK-006C` [✅ Completed]: 🎭 Claude — Multi-platform technical QA gate (CMD, PowerShell, macOS, Linux), fixed missing `LICENSE` file.
+## Milestone 1.5 Status: [✅] Complete & Pushed (`d30532e`)
+- `TASK-006A`, `TASK-006B`, `TASK-006C` [✅ Completed]: Root `README.md` revamp, Mermaid flowchart, collapsible quickstart, MIT `LICENSE`, and `FAQ.md`.
+
+## Active Sprint: Milestone 1.6 — Polish 00-prerequisites (Terminal Setup, PATH & ExecutionPolicy)
+- `TASK-013A` [✅ Completed]: ♊ Gemini — Pedagogy, plain-English terminal mental models (PATH analogy), zero-jargon execution policy guide.
+- `TASK-013B` [✅ Completed]: 💻 Codex — Visual hierarchy, interactive `<details>` tabs, Mermaid PATH flowchart, terminal preview blocks.
+- `TASK-013C` [✅ Completed]: 🎭 Claude — Architecture QA audit across Windows 10/11 (PowerShell & CMD), macOS, Linux, and relative links.
+
+
 
 ## Milestone 2: Projects & Jupyter Workflow (Queued)
 - `TASK-008` [Pending]: Gemini drafting `02-first-project/README.md`.

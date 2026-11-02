@@ -6,20 +6,23 @@
 ---
 
 ## 🛑 Current Active Rule
-* **DO NOT move to `00-prerequisites` or any subsequent lesson until `README.md` is 100% finished, reviewed, and approved by the user.**
-* Every agent's sole focus right now is perfecting **`README.md`** to make it as simple, attractive, and easy for beginners as possible.
+* **Reviewing `00-prerequisites/README.md`. DO NOT move to `01-installation` or subsequent lessons until `00-prerequisites` is reviewed and approved by the user.**
+* All agents' work on `00-prerequisites/README.md` is complete and staged for user review.
 
 ---
 
 ## 📍 Where We Are Right Now
 - **Project:** `uv-beginners-learn` (Astral `uv` guide for beginners)
 - **Repo Remote:** `https://github.com/servasadolph/uv-beginners-learn.git` (`main` branch)
-- **Active Task:** Final user review of [`README.md`](README.md) before commit.
+- **Latest Commit on Remote:** `d30532e readme update`
+- **Active Task:** User review of [`00-prerequisites/README.md`](00-prerequisites/README.md).
 - **Agent Handoff Status:**
-  - 💻 **Codex (`TASK-006B`):** [✅ Completed & Signed Off] Visual hierarchy, badges, Mermaid diagram, and tables.
-  - 🎭 **Claude (`TASK-006C`):** [✅ Completed & Signed Off] Technical QA across shells (PowerShell, CMD, Bash/Zsh), verified relative links, and fixed missing `LICENSE`.
-  - ♊ **Gemini (`TASK-006A`):** [✅ Completed & Signed Off] Pedagogy, zero-jargon framing, and track navigation.
-- **Current Blocker / Wait State:** Awaiting user's final review & approval before committing `README.md`, `LICENSE`, `FAQ.md`, and memory files.
+  - ♊ **Gemini (`TASK-013A`):** [✅ Completed & Signed Off] Pedagogy, phonebook analogy for `PATH`, friendly motivation.
+  - 💻 **Codex (`TASK-013B`):** [✅ Completed & Signed Off] Visual flowchart, collapsible shell tabs, keyboard badges (`<kbd>`), and clean layout.
+  - 🎭 **Claude (`TASK-013C`):** [✅ Completed & Signed Off] Technical QA across shells, execution policy scope security, and breadcrumb link validation.
+- **Current Blocker / Wait State:** Awaiting user's review and approval on `00-prerequisites/README.md` before committing and proceeding to `01-installation`.
+
+
 
 
 ---
